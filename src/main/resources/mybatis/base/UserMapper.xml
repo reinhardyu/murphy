@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="UserMapper_" >
+  <resultMap id="BaseResultMap" type="user" >
+    <constructor >
+      <arg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LOGINNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DEPT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PASSWORD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GRADE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SERIALNUMBER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EMAIL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MOBILEPHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LEAD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POSITION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OTHERDEPT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ACTIVATION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_USER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATE_USER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="JOBPOSITION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PHOTO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ISSTATION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RECEICESTATE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AREA_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insertSelective" parameterType="user" >
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select sys_guid() from dual
+    </selectKey>
+    insert into MUP_SYS_USER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="loginname != null" >
+        LOGINNAME,
+      </if>
+      <if test="dept != null" >
+        DEPT,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="grade != null" >
+        GRADE,
+      </if>
+      <if test="serialnumber != null" >
+        SERIALNUMBER,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="mobilephone != null" >
+        MOBILEPHONE,
+      </if>
+      <if test="lead != null" >
+        LEAD,
+      </if>
+      <if test="position != null" >
+        POSITION,
+      </if>
+      <if test="otherdept != null" >
+        OTHERDEPT,
+      </if>
+      <if test="activation != null" >
+        ACTIVATION,
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateUser != null" >
+        UPDATE_USER,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+      <if test="jobposition != null" >
+        JOBPOSITION,
+      </if>
+      <if test="photo != null" >
+        PHOTO,
+      </if>
+      <if test="isstation != null" >
+        ISSTATION,
+      </if>
+      <if test="receicestate != null" >
+        RECEICESTATE,
+      </if>
+      <if test="areaId != null" >
+        AREA_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="loginname != null" >
+        #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="dept != null" >
+        #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="serialnumber != null" >
+        #{serialnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        #{mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="lead != null" >
+        #{lead,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="otherdept != null" >
+        #{otherdept,jdbcType=VARCHAR},
+      </if>
+      <if test="activation != null" >
+        #{activation,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobposition != null" >
+        #{jobposition,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="isstation != null" >
+        #{isstation,jdbcType=VARCHAR},
+      </if>
+      <if test="receicestate != null" >
+        #{receicestate,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <sql id="querySql">
+    ID AS id, LOGINNAME AS loginname, DEPT AS dept, PASSWORD AS password, NAME AS name, GRADE AS grade,
+    SERIALNUMBER AS serialnumber , PHONE AS phone, EMAIL AS email, MOBILEPHONE AS mobilephone, LEAD AS lead,
+    POSITION AS position, OTHERDEPT AS otherdept, ACTIVATION AS activation, CREATE_USER AS createUser,
+    CREATE_DATE AS createDate, UPDATE_USER AS updateUser, UPDATE_DATE AS updateDate, JOBPOSITION AS jobposition,
+    PHOTO AS photo, ISSTATION AS isstation, RECEICESTATE AS receicestate, AREA_ID
+  </sql>
+  <sql id="selectSql">
+    <if test="loginname != null and loginname != ''">
+      AND LOGINNAME = #{loginname}
+    </if>
+  </sql>
+
+  <select id="getUserList" resultType="user" parameterType="user">
+    SELECT <include refid="querySql"></include>
+    FROM MUP_SYS_USER WHERE 1=1
+    <include refid="selectSql"></include>
+  </select>
+
+  <select id="getUserByLoginName" parameterType="String" resultType="user">
+    SELECT <include refid="querySql"></include>
+    FROM MUP_SYS_USER WHERE LOGINNAME = #{loginname}
+  </select>
+
+</mapper>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.murphy.base.dao.DictoryDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.murphy.base.model.DictoryDetail" >
+    <constructor >
+      <arg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TYPEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICTNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICTTYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICTLEVEL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICTORDER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICTMEMO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ISEGC" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insertSelective" parameterType="com.murphy.base.model.DictoryDetail" >
+    insert into MUP_SYS_DICTORYDETAIL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="typeid != null" >
+        TYPEID,
+      </if>
+      <if test="dictname != null" >
+        DICTNAME,
+      </if>
+      <if test="dicttype != null" >
+        DICTTYPE,
+      </if>
+      <if test="dictlevel != null" >
+        DICTLEVEL,
+      </if>
+      <if test="dictorder != null" >
+        DICTORDER,
+      </if>
+      <if test="dictmemo != null" >
+        DICTMEMO,
+      </if>
+      <if test="isegc != null" >
+        ISEGC,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null" >
+        #{typeid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictname != null" >
+        #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="dicttype != null" >
+        #{dicttype,jdbcType=VARCHAR},
+      </if>
+      <if test="dictlevel != null" >
+        #{dictlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="dictorder != null" >
+        #{dictorder,jdbcType=VARCHAR},
+      </if>
+      <if test="dictmemo != null" >
+        #{dictmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="isegc != null" >
+        #{isegc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

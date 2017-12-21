@@ -1,0 +1,9 @@
+.show_iframe iframe{
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+}
+.navbar-custom-menu ul li i {
+    padding-top: 2px;
+    padding-bottom: 4px;
+}

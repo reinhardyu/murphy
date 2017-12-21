@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.murphy.base.dao.DeptMapper" >
+  <resultMap id="BaseResultMap" type="com.murphy.base.model.Dept" >
+    <constructor >
+      <arg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PARENT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_USER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATE_USER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DESCRIPTION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EVALUATEFLAG" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="DEPTLEADER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FAX" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ISDELETE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="TEAM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORDERNUM" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="HANDPHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ISSENDMSG" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insertSelective" parameterType="com.murphy.base.model.Dept" >
+    insert into MUP_SYS_DEPT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID,
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateUser != null" >
+        UPDATE_USER,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+      <if test="code != null" >
+        CODE,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="evaluateflag != null" >
+        EVALUATEFLAG,
+      </if>
+      <if test="deptleader != null" >
+        DEPTLEADER,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="fax != null" >
+        FAX,
+      </if>
+      <if test="isdelete != null" >
+        ISDELETE,
+      </if>
+      <if test="team != null" >
+        TEAM,
+      </if>
+      <if test="ordernum != null" >
+        ORDERNUM,
+      </if>
+      <if test="handphone != null" >
+        HANDPHONE,
+      </if>
+      <if test="issendmsg != null" >
+        ISSENDMSG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluateflag != null" >
+        #{evaluateflag,jdbcType=DECIMAL},
+      </if>
+      <if test="deptleader != null" >
+        #{deptleader,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        #{isdelete,jdbcType=DECIMAL},
+      </if>
+      <if test="team != null" >
+        #{team,jdbcType=VARCHAR},
+      </if>
+      <if test="ordernum != null" >
+        #{ordernum,jdbcType=DECIMAL},
+      </if>
+      <if test="handphone != null" >
+        #{handphone,jdbcType=VARCHAR},
+      </if>
+      <if test="issendmsg != null" >
+        #{issendmsg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
